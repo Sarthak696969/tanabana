@@ -62,6 +62,12 @@
     "searching": "શોધાઈ રહ્યું છે...",
     "noProductsFound": "\"{{query}}\" માટે કોઈ પ્રોડક્ટ્સ મળ્યાં નથી"
   },
+  "videoPlayer": {
+    "viewDetails": "વિગતો જુઓ",
+    "addToCart": "કાર્ટમાં ઉમેરો",
+    "adding": "ઉમેરાઈ રહ્યું છે...",
+    "videoReference": "વીડિયો માત્ર સંદર્ભ માટે છે. વાસ્તવિક ઉત્પાદન માટે કૃપા કરીને છબી જુઓ."
+  },
   "language": {
     "selectLanguage": "ભાષા પસંદ કરો",
     "changeLanguage": "ભાષા બદલો",

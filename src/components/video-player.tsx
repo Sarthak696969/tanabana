@@ -29,15 +29,38 @@ interface VideoPlayerProps {
   onPauseChange?: (isPaused: boolean) => void
   isAddingToCart?: boolean
   preloadMode?: "none" | "metadata" | "auto"
+  translations?: {
+    viewDetails: string
+    addToCart: string
+    adding: string
+    videoReference: string
+  }
 }
 
-export function VideoPlayer({ product, isActive, onAddToCart, onLike, onPauseChange, isAddingToCart = false, preloadMode }: VideoPlayerProps) {
+export function VideoPlayer({ 
+  product, 
+  isActive, 
+  onAddToCart, 
+  onLike, 
+  onPauseChange, 
+  isAddingToCart = false, 
+  preloadMode,
+  translations 
+}: VideoPlayerProps) {
   const videoRef = useRef<HTMLVideoElement>(null)
   const { isMuted, setIsMuted, volume, setVolume, hasUserInteracted, setHasUserInteracted } = useVideoSettings()
   const [isPaused, setIsPaused] = useState(false)
   const [isLiked, setIsLiked] = useState(false)
   const [showPlayPauseButton, setShowPlayPauseButton] = useState(true)
   const router = useRouter()
+
+  // Default English translations
+  const t = translations || {
+    viewDetails: "View Details",
+    addToCart: "Add to Cart",
+    adding: "Adding...",
+    videoReference: "The video is for reference only. Please refer to the image for the actual product."
+  }
 
   useEffect(() => {
     if (videoRef.current) {
@@ -197,7 +220,7 @@ export function VideoPlayer({ product, isActive, onAddToCart, onLike, onPauseCha
 
           {/* Small cart text */}
           <p className="text-xs text-white/60 mb-3">
-            The video is for reference only. Please refer to the image for the actual product.
+            {t.videoReference}
           </p>
 
           <div className="flex items-center gap-3">
@@ -207,7 +230,7 @@ export function VideoPlayer({ product, isActive, onAddToCart, onLike, onPauseCha
               className="bg-white/10 backdrop-blur-sm border-white/20 text-white"
               onClick={handleProductInfo}
             >
-              View Details
+              {t.viewDetails}
             </Button>
             <Button
               size="sm"
@@ -218,12 +241,12 @@ export function VideoPlayer({ product, isActive, onAddToCart, onLike, onPauseCha
               {isAddingToCart ? (
                 <>
                   <div className="mr-2 h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" />
-                  Adding...
+                  {t.adding}
                 </>
               ) : (
                 <>
                   <ShoppingBag size={16} className="mr-2" />
-                  Add to Cart
+                  {t.addToCart}
                 </>
               )}
             </Button>

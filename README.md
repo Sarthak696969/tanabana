@@ -65,6 +65,12 @@ You'll need accounts and API keys for the following services:
    - Visit [Cloudinary Dashboard](https://cloudinary.com/console)
    - Get your Cloud Name, API Key, and API Secret
 
+4. **Razorpay** - For payment processing
+   - Visit [Razorpay Dashboard](https://dashboard.razorpay.com/)
+   - Sign up or log in to your account
+   - Navigate to Settings > API Keys
+   - Generate Key ID and Key Secret (use Test keys for development)
+
 ## Environment Variables
 
 Create a `.env.local` file in the root directory with the following variables:
@@ -87,6 +93,10 @@ DEEPGRAM_API_KEY="your-deepgram-api-key"
 CLOUDINARY_CLOUD_NAME="your-cloudinary-cloud-name"
 CLOUDINARY_API_KEY="your-cloudinary-api-key"
 CLOUDINARY_API_SECRET="your-cloudinary-api-secret"
+
+# Razorpay Configuration (Required for payments)
+RAZORPAY_KEY_ID="your-razorpay-key-id"
+RAZORPAY_KEY_SECRET="your-razorpay-key-secret"
 ```
 
 ### Environment Variables Explained
@@ -97,6 +107,8 @@ CLOUDINARY_API_SECRET="your-cloudinary-api-secret"
 - **GOOGLE_AI_API_KEY**: Google AI API key for Gemini model
 - **DEEPGRAM_API_KEY**: Deepgram API key for speech recognition
 - **CLOUDINARY_***: Cloudinary credentials for file storage
+- **RAZORPAY_KEY_ID**: Razorpay public key (Key ID)
+- **RAZORPAY_KEY_SECRET**: Razorpay secret key (Key Secret)
 
 ## Installation & Setup
 
@@ -245,6 +257,18 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - **DELETE** `/api/cart`
 - **Body**: `{ productId: string }`
 - **Response**: `{ success: boolean }`
+
+### Payment Endpoints
+
+#### Create Payment Order
+- **POST** `/api/payment/create-order`
+- **Body**: `{ amount: number, currency: string (default: 'INR'), paymentType: string ('cart' | 'signup') }`
+- **Response**: `{ id: string, amount: number, currency: string, key: string }`
+
+#### Verify Payment
+- **POST** `/api/payment/verify`
+- **Body**: `{ razorpay_order_id: string, razorpay_payment_id: string, razorpay_signature: string, paymentType: string }`
+- **Response**: `{ success: boolean, paymentId: string, orderId: string }`
 
 ### User Profile
 
