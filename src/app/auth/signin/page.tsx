@@ -74,7 +74,7 @@ export default function SignInPage() {
             </div>
             <CardTitle className="text-2xl font-bold">{t("auth.welcomeBack")}</CardTitle>
             <CardDescription>
-              {t("auth.signIn")} {t("auth.joinKarigarMart")}
+              {t("auth.signIn")} {t("auth.joinTanaBana")}
             </CardDescription>
           </CardHeader>
           <CardContent>

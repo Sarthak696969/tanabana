@@ -22,13 +22,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "KarigarMart - Discover Unique Products",
+  title: "TanaBana - Discover Unique Products",
   description: "A social marketplace for discovering and purchasing unique artisan products through short-form video content.",
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "KarigarMart",
+    title: "TanaBana",
   },
   icons: {
     icon: "/icon-192x192.png",

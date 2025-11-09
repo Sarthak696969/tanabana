@@ -1,4 +1,4 @@
-# KarigarMart - Artisan Marketplace Platform
+# TanaBana - Artisan Marketplace Platform
 
 A comprehensive Next.js-based artisan marketplace platform featuring video-first product showcases, AI-powered content processing, and secure authentication. Built with modern web technologies and designed for scalability.
 
@@ -71,7 +71,7 @@ Create a `.env.local` file in the root directory with the following variables:
 
 ```env
 # Database Configuration
-DATABASE_URL="postgresql://username:password@localhost:5432/karigarmart"
+DATABASE_URL="postgresql://username:password@localhost:5432/TanaBana"
 
 # NextAuth Configuration
 NEXTAUTH_URL="http://localhost:3000"

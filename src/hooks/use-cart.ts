@@ -27,8 +27,8 @@ interface CartData {
 }
 
 // Local storage utilities
-const CART_CACHE_KEY = 'karigarmart_cart_cache'
-const CART_CACHE_EXPIRY = 'karigarmart_cart_expiry'
+const CART_CACHE_KEY = 'TanaBana_cart_cache'
+const CART_CACHE_EXPIRY = 'TanaBana_cart_expiry'
 const CACHE_DURATION = 5 * 60 * 1000 // 5 minutes
 
 function getCachedCart(): CartData | null {

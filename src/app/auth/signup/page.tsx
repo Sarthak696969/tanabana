@@ -110,9 +110,9 @@ export default function SignUpPage() {
             <div className="flex justify-end mb-4">
               <LanguageSelector />
             </div>
-            <CardTitle className="text-2xl font-bold">{t("auth.joinKarigarMart")}</CardTitle>
+            <CardTitle className="text-2xl font-bold">{t("auth.joinTanaBana")}</CardTitle>
             <CardDescription>
-              {t("auth.signUp")} {t("auth.joinKarigarMart")}
+              {t("auth.signUp")} {t("auth.joinTanaBana")}
             </CardDescription>
           </CardHeader>
           <CardContent>

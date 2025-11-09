@@ -455,7 +455,7 @@ export default function OnboardingPage() {
             className="text-center"
           >
             <CheckCircle size={80} className="text-green-500 mx-auto mb-4" />
-            <h1 className="text-2xl font-bold text-foreground mb-2">Welcome to KarigarMart!</h1>
+            <h1 className="text-2xl font-bold text-foreground mb-2">Welcome to TanaBana!</h1>
             <p className="text-muted-foreground mb-4">Your profile has been created successfully.</p>
             <p className="text-sm text-muted-foreground">Redirecting to your dashboard...</p>
           </motion.div>
